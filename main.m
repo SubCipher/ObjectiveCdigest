@@ -1,76 +1,87 @@
-#import <Foundation/Foundation.h>
-
-//Objecive C cheatSheet
+//  main.m
+//  ageApp
+//
 //  Created by Krishna on 6/3/15.
 //
 #import <Foundation/Foundation.h>
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //tryobjective-C cheat sheet
-        //
-        //
-        //
         //output a basic string using NSLog
         NSLog(@"Hello, Mr. Higgie.");
         
-        
-        //creating a variable using NSString and using NSLog for output
-        //use "NSString *fooStringName;" to declare a variable
-        NSString *firstName = @"Enter Your Name Here";
-        NSString *lastName = @"Enter Your Name Here";
-        
-        
+        //creating an NSString object then using NSLog for displaying
+        //use "NSString *StringName;" to declare the object
+        NSString *introText = @"My name is";
+        NSString *firstName = @"FirstName";
+        NSString *lastName = @"LastName";
         
         //To log display/output to screen and avoid "Format string is not a stirng literal(potentially insecure)" msg:
         // >>'NSLog(@"%@", variableName' <<
-        NSLog(@"%@ %@",firstName, lastName);
-        
+        NSLog(@"%@, %@ %@",introText, firstName, lastName);
         
         //Creating number objects
-        NSNumber *age = @43;
+        //this as different properties not afforded to int (or other primitive types)
+        NSNumber *age = @99;
         NSLog(@"%@", age);
         
+        //creating an array of objects
+        NSLog(@"**********************************************************\n\n");
+        NSLog(@"working with arrays");
+        NSLog(@"**********************************************************\n\n");
         
-        //creating an array
-        NSArray *apps = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
-        NSLog(@"%@",apps);
         
+        NSArray *appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
+        NSLog(@"display all items in appsArray %@",appsArray);
+        
+        NSLog(@"**************************************************************\n\n");
+        //NSArray *appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
+        NSLog(@"");
+        NSLog(@"display appsArray item at index 0: %@",appsArray[0]);
         
         //using index number to access elements in an array
-        NSLog(@"%@",apps[1]);
+        NSLog(@"display appsArray item at index1: %@",appsArray[1]);
+        NSLog(@"**************************************************************\n\n");
+        //do it with a loop
+        for (int i = 0 ; i < 3; i++)
+        {
+            NSLog (@"Print out full appsArray using a loop[%d]: %@",i,appsArray[i]);
+        }
+        NSLog(@"**************************************************************\n\n");
         
         
-        //recreating an array to add a new element to it (this is the only way to "update" an NSArray since they cannot be altered
-        apps = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot",@"Instacanvas"];
-        
-        
-        //creating a dictionary>>format={keyName0:value0,keyName1:value1}
-        NSDictionary *appRatings = @{@"keyNameGoes Here":@"valueGoes Here",
-                                     @"AngryFowl": @3,
-                                     @"Lettertouch": @5,
-                                     @"BeJellyed": @7};
-        NSLog(@"%@",appRatings);
-        
-        
-        //accessing value of a dictionary using keyName
-        NSLog(@"%@", appRatings[@"Lettertouch"]);
+        //recreating an immutiable NSArray to add a new element to it (this is the only way to "update" an NSArray since they cannot be altered
+        appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot",@"Instacanvas"];
         
         
         //calling a method = sending messages to an object [objectName messageName];
         //in this case sending the 'description' message to the NSArray apps
-        NSLog(@"%@",[apps description]);
-        
-        
+        NSLog(@"results of sending the description msg to appsArray %@",[appsArray description]);
+        NSLog(@"**************************************************************\n\n");
         //storing the results of the 'description' message in a variable
-        NSString *result = [apps description];
-        NSLog(@"%@",result);
+        NSString *result = [appsArray description];
+        NSLog(@"storing the results of the 'description' message in a variable %@",result);
+        NSLog(@"**************************************************************\n");
+        
+        //creating a dictionary>>format={keyName0:value0,keyName1:value1}
+        NSDictionary *appRatings = @{@"keyName":@"value",
+                                     @"AngryFowl": @3,
+                                     @"Lettertouch": @5,
+                                     @"BeJellyed": @7};
+        
+        NSLog(@"\n print out appRatings Dictionary %@",appRatings);
+        NSLog(@"**************************************************************\n\n");
+        
+        //accessing value of a dictionary using keyName
+        NSLog(@"the value of keyName Lettertouch is:  %@", appRatings[@"Lettertouch"]);
+        
+        NSLog(@"**************************************************************\n\n");
         
         
         //storing the results of the 'length' message that returns an NSUInteger
         NSString *city = @"Ice World";
         NSUInteger cityLength = [city length];
         NSLog(@"the variable City has %lu characters in it",(unsigned long)cityLength);
-        
         
         //how to perform operations on NSNumber objects
         //assign value to NSNUmber variables
@@ -81,39 +92,31 @@ int main(int argc, const char * argv[]) {
         NSUInteger higgiesAgeInt = [higgiesAge unsignedIntegerValue];
         NSUInteger phoneLivesInt = [phoneLives unsignedIntegerValue];
         
-        
         //perform operaition and store it in a variable
         NSUInteger higgiesRealAge = higgiesAgeInt * phoneLivesInt;
         //log the output
         NSLog(@"higges real age is %lu", (unsigned long)higgiesRealAge);
         
-        
         //appending strings
         NSString *fullName =[firstName stringByAppendingString:lastName];
         NSLog(@"my full name is %@", fullName);
-        
         
         //using nested messages to create a space between two appended objects
         NSString *firstNamePlusSpace = [firstName stringByAppendingString:@" "];
         NSString *fullNamePlusSpace= [firstNamePlusSpace stringByAppendingString:lastName];
         NSLog(@"%@",fullNamePlusSpace);
         
-        
         //passing multiple arguments to achive results of above example using less code
         NSString *NewfullName = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
         NSLog(@"%@",NewfullName);
-        
         
         //creating a copy of a string
         NSString *copy = [NSString stringWithString:firstName];
         NSLog(@"%@",copy);
         
         //creating emtpy objects
-        
-        
         //empty NSArray= NSArray *emptyArray = [NSArray array];
         //emtpy NSDictionary = NSDictionary *emtptyDict = [NSDictionary dictionary];
-        
         
         //creating an empty object using alloc/init
         //common pattern for creating an emptpy object, no matter what class you use
@@ -146,7 +149,6 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Confirmed: he is super mean");
         }
         
-        
         //if else operators
         
         if (mrHiggieIsMean) {
@@ -173,7 +175,6 @@ int main(int argc, const char * argv[]) {
         else {
             NSLog(@"Mr. Higgie is definitely mean");
         }
-        
         
         // random number generator used for selecting random used as index numbers for allHats array
         int i = arc4random() % 3;
@@ -244,11 +245,8 @@ int main(int argc, const char * argv[]) {
             case DayOfWeekSunday: {
                 NSLog(@"Todays new hat is %@",@"Cowboy");
                 break;
-                
             }
-                
         }
-        
         
         //enumerating a dictionary
         
@@ -264,10 +262,6 @@ int main(int argc, const char * argv[]) {
             NSString *definition = funnyWords[word];
             NSLog(@"%@ is defined as %@", word, definition);
         }
-        
-        
-        
-        
         
         //formatting code block
         //this creates a method/block code called 'myFirstBlock' that logs/displays text passed to it within the ()
@@ -307,5 +301,6 @@ int main(int argc, const char * argv[]) {
         
         [newHats enumerateObjectsUsingBlock:enumeratingBlock];
         return 0;
-	}        
+        
     }
+}
