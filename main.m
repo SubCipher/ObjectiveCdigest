@@ -114,21 +114,29 @@ int main(int argc, const char * argv[]) {
         NSString *copy = [NSString stringWithString:firstName];
         NSLog(@"%@",copy);
         
-        //creating emtpy objects
-        //empty NSArray= NSArray *emptyArray = [NSArray array];
-        //emtpy NSDictionary = NSDictionary *emtptyDict = [NSDictionary dictionary];
+        //using nested messages to create a space between two appended objects
+        NSString *firstNamePlusSpace = [firstName stringByAppendingString:@" "];
+        NSString *fullNamePlusSpace= [firstNamePlusSpace stringByAppendingString:lastName];
+        NSLog(@"%@",fullNamePlusSpace);
         
-        //creating an empty object using alloc/init
-        //common pattern for creating an emptpy object, no matter what class you use
-        //these objects remain unusable until init is sent to it
-        // NSString *emptyString = [[NSString alloc] init];
-        //NSArray *emptyArray = [[NSArray alloc] init];
-        //NSDictionary *emptyDictionary = [[NSDictionary alloc] init];
+        //passing multiple arguments to achive results of above example using less code
+        NSString *NewfullName = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
+        NSLog(@"%@",NewfullName);
         
-        //sending init to empty object
-        // NSString *emptyString = [[NSString alloc] initWithString:firstName];
+        //creating a copy of a string
+        NSString *copy = [NSString stringWithString:firstName];
+        NSLog(@"%@",copy);
         
-        //foramtting with stringWithFormat
+        //creating and initializing an empty array so you can USE it
+        NSArray *emptyArray = [[NSArray alloc] init];
+        NSLog (@"contents of emptyArray = %@",emptyArray);
+        
+        //creating an arry with objects
+        NSArray *nonEmptyArray = [[NSArray alloc]initWithObjects:@"one",@"two",@"three",@"four",nil];
+        NSLog (@"contents of nonemptyArray =%@",nonEmptyArray);
+        
+        //emtpy NSDictionary
+        NSDictionary *emptyDict = [[NSDictionary alloc]init];
         NSString *fullnameVer3 = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
         NSLog(@"%@ %@",firstName, lastName);
         NSLog(@"%@",fullnameVer3);
