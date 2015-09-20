@@ -10,6 +10,7 @@ int main(int argc, const char * argv[]) {
         //output a basic string using NSLog
         NSLog(@"Hello, Mr. Higgie.");
         
+        
         //creating an NSString object then using NSLog for displaying
         //use "NSString *StringName;" to declare the object
         NSString *introText = @"My name is";
@@ -19,19 +20,83 @@ int main(int argc, const char * argv[]) {
         //To log display/output to screen and avoid "Format string is not a stirng literal(potentially insecure)" msg:
         // >>'NSLog(@"%@", variableName' <<
         NSLog(@"%@, %@ %@",introText, firstName, lastName);
-        
+
         //Creating number objects
         //this as different properties not afforded to int (or other primitive types)
         NSNumber *age = @99;
         NSLog(@"%@", age);
         
-        //creating an array of objects
+        //storing the results of the 'length' message that returns an NSUInteger
+        NSString *city = @"Ice World";
+        NSUInteger cityLength = [city length];
+        NSLog(@"the variable City has %lu characters in it",(unsigned long)cityLength);
+
+        //how to perform operations on NSNumber objects
+        //assign value to NSNUmber variables
+        NSNumber *higgiesAge = @6;
+        NSNumber *phoneLives = @3;
+        
+        //create NSUInteger value to represent NSnumber variables
+        NSUInteger higgiesAgeInt = [higgiesAge unsignedIntegerValue];
+        NSUInteger phoneLivesInt = [phoneLives unsignedIntegerValue];
+
+        //perform operaition and store it in a variable
+        NSUInteger higgiesRealAge = higgiesAgeInt * phoneLivesInt;
+        //log the output
+        NSLog(@"higges real age is %lu", (unsigned long)higgiesRealAge);
+
+        //appending strings
+        NSString *fullName =[firstName stringByAppendingString:lastName];
+        NSLog(@"my full name is %@", fullName);
+
+        //using nested messages to create a space between two appended objects
+        NSString *firstNamePlusSpace = [firstName stringByAppendingString:@" "];
+        NSString *fullNamePlusSpace= [firstNamePlusSpace stringByAppendingString:lastName];
+        NSLog(@"%@",fullNamePlusSpace);
+
+        //passing multiple arguments to achive results of above example using less code
+        NSString *NewfullName = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
+        NSLog(@"%@",NewfullName);
+
+        //creating a copy of a string
+        NSString *copy = [NSString stringWithString:firstName];
+        NSLog(@"%@",copy);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         NSLog(@"**********************************************************\n\n");
         NSLog(@"working with arrays");
         NSLog(@"**********************************************************\n\n");
         
+        //creating and initializing an empty array so you can USE it later
+        NSArray *emptyArray = [[NSArray alloc] init];
+        NSLog (@"contents of emptyArray = %@",emptyArray);
         
-        NSArray *appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
+        //creating an nonEmpty array with objects
+        NSArray *nonEmptyArray = [[NSArray alloc]initWithObjects:@"one",@"two",@"three",@"four",nil];
+        NSLog (@"contents of nonemptyArray =%@",nonEmptyArray);
+        
+        //creating an empty array that has capacity
+        NSMutableArray *arrayCapacity = [[NSMutableArray alloc]initWithCapacity:10];
+        NSLog (@"contents of arrayMadeWithCapacity = %@",arrayCapacity);
+        
+        [arrayCapacity addObject:@"objectOne"];
+        [arrayCapacity addObject:@"Objecttwo"];
+        
+        
+          NSLog (@"results of addObjects = %@",arrayCapacity);
+        
+        
+        //creating an array of objects
+               NSArray *appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
         NSLog(@"display all items in appsArray %@",appsArray);
         
         NSLog(@"**************************************************************\n\n");
@@ -50,6 +115,12 @@ int main(int argc, const char * argv[]) {
         NSLog(@"**************************************************************\n\n");
         
         
+        
+        
+        
+        
+        
+        
         //recreating an immutiable NSArray to add a new element to it (this is the only way to "update" an NSArray since they cannot be altered
         appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot",@"Instacanvas"];
         
@@ -61,7 +132,20 @@ int main(int argc, const char * argv[]) {
         //storing the results of the 'description' message in a variable
         NSString *result = [appsArray description];
         NSLog(@"storing the results of the 'description' message in a variable %@",result);
-        NSLog(@"**************************************************************\n");
+        
+        
+        NSLog(@"**********************************************************\n\n");
+        NSLog(@"working with Dictionaries");
+        NSLog(@"**********************************************************\n\n");
+        
+        
+        
+//        NSDictionary opyions
+//        NSDictionary *emptyDict1 = [[NSDictionary alloc]initWithCoder: ];
+//        NSDictionary *emptyDict2 = [[NSDictionary alloc]initWithContentsOfFile:<#(NSString *)#>;
+//        NSDictionary *emptyDict3 = [[NSDictionary alloc]initWithContentsOfURL:<#(NSURL *)#>;
+//        NSDictionary *emptyDict4 = [[NSDictionary alloc]initWithDictionary:<#(NSDictionary *)#> copyItems:<#(BOOL)#>;
+        
         
         //creating a dictionary>>format={keyName0:value0,keyName1:value1}
         NSDictionary *appRatings = @{@"keyName":@"value",
@@ -78,69 +162,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"**************************************************************\n\n");
         
         
-        //storing the results of the 'length' message that returns an NSUInteger
-        NSString *city = @"Ice World";
-        NSUInteger cityLength = [city length];
-        NSLog(@"the variable City has %lu characters in it",(unsigned long)cityLength);
         
-        //how to perform operations on NSNumber objects
-        //assign value to NSNUmber variables
-        NSNumber *higgiesAge = @6;
-        NSNumber *phoneLives = @3;
-        
-        //create NSUInteger value to represent NSnumber variables
-        NSUInteger higgiesAgeInt = [higgiesAge unsignedIntegerValue];
-        NSUInteger phoneLivesInt = [phoneLives unsignedIntegerValue];
-        
-        //perform operaition and store it in a variable
-        NSUInteger higgiesRealAge = higgiesAgeInt * phoneLivesInt;
-        //log the output
-        NSLog(@"higges real age is %lu", (unsigned long)higgiesRealAge);
-        
-        //appending strings
-        NSString *fullName =[firstName stringByAppendingString:lastName];
-        NSLog(@"my full name is %@", fullName);
-        
-        //using nested messages to create a space between two appended objects
-        NSString *firstNamePlusSpace = [firstName stringByAppendingString:@" "];
-        NSString *fullNamePlusSpace= [firstNamePlusSpace stringByAppendingString:lastName];
-        NSLog(@"%@",fullNamePlusSpace);
-        
-        //passing multiple arguments to achive results of above example using less code
-        NSString *NewfullName = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
-        NSLog(@"%@",NewfullName);
-        
-        //creating a copy of a string
-        NSString *copy = [NSString stringWithString:firstName];
-        NSLog(@"%@",copy);
-        
-        //using nested messages to create a space between two appended objects
-        NSString *firstNamePlusSpace = [firstName stringByAppendingString:@" "];
-        NSString *fullNamePlusSpace= [firstNamePlusSpace stringByAppendingString:lastName];
-        NSLog(@"%@",fullNamePlusSpace);
-        
-        //passing multiple arguments to achive results of above example using less code
-        NSString *NewfullName = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
-        NSLog(@"%@",NewfullName);
-        
-        //creating a copy of a string
-        NSString *copy = [NSString stringWithString:firstName];
-        NSLog(@"%@",copy);
-        
-        //creating and initializing an empty array so you can USE it
-        NSArray *emptyArray = [[NSArray alloc] init];
-        NSLog (@"contents of emptyArray = %@",emptyArray);
-        
-        //creating an arry with objects
-        NSArray *nonEmptyArray = [[NSArray alloc]initWithObjects:@"one",@"two",@"three",@"four",nil];
-        NSLog (@"contents of nonemptyArray =%@",nonEmptyArray);
-        
-        //emtpy NSDictionary
-        NSDictionary *emptyDict = [[NSDictionary alloc]init];
-        NSString *fullnameVer3 = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
-        NSLog(@"%@ %@",firstName, lastName);
-        NSLog(@"%@",fullnameVer3);
-        
+        //sending init to empty object
         //if statements and BOOL types
         
         BOOL mrHiggieIsMean = NO;
@@ -156,7 +179,7 @@ int main(int argc, const char * argv[]) {
             //do this
             NSLog(@"Confirmed: he is super mean");
         }
-        
+
         //if else operators
         
         if (mrHiggieIsMean) {
@@ -183,7 +206,7 @@ int main(int argc, const char * argv[]) {
         else {
             NSLog(@"Mr. Higgie is definitely mean");
         }
-        
+
         // random number generator used for selecting random used as index numbers for allHats array
         int i = arc4random() % 3;
         NSArray *allHats = @[@"Sombrero",@"Fedora",@"Durby"];
@@ -309,6 +332,14 @@ int main(int argc, const char * argv[]) {
         
         [newHats enumerateObjectsUsingBlock:enumeratingBlock];
         return 0;
+        
+        
+        
+        NSLog(@"**********************************************************\n\n");
+        NSLog(@"working with classes");
+        NSLog(@"**********************************************************\n\n");
+        
+
         
     }
 }
