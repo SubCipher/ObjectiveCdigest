@@ -333,13 +333,7 @@ int main(int argc, const char * argv[]) {
         [newHats enumerateObjectsUsingBlock:enumeratingBlock];
         return 0;
         
-        
-        
-        NSLog(@"**********************************************************\n\n");
-        NSLog(@"working with classes");
-        NSLog(@"**********************************************************\n\n");
-        
-
+            
         
     }
 }
