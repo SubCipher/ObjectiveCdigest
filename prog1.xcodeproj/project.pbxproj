@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181F589E1BA1998100C2A32C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F589D1BA1998100C2A32C /* main.m */; };
 		18D148DF1BAE4F02006B6ECD /* PracticeVCNoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */; };
+		18D149171BAFAF93006B6ECD /* FooClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D149161BAFAF93006B6ECD /* FooClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		181F589D1BA1998100C2A32C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18D148DD1BAE4F02006B6ECD /* PracticeVCNoClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeVCNoClass.h; sourceTree = "<group>"; };
 		18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeVCNoClass.m; sourceTree = "<group>"; };
+		18D149151BAFAF93006B6ECD /* FooClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooClass.h; sourceTree = "<group>"; };
+		18D149161BAFAF93006B6ECD /* FooClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				181F589D1BA1998100C2A32C /* main.m */,
 				18D148DD1BAE4F02006B6ECD /* PracticeVCNoClass.h */,
 				18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */,
+				18D149151BAFAF93006B6ECD /* FooClass.h */,
+				18D149161BAFAF93006B6ECD /* FooClass.m */,
 			);
 			path = prog1;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181F589E1BA1998100C2A32C /* main.m in Sources */,
+				18D149171BAFAF93006B6ECD /* FooClass.m in Sources */,
 				18D148DF1BAE4F02006B6ECD /* PracticeVCNoClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

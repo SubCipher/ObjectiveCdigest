@@ -63,15 +63,6 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@",copy);
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         NSLog(@"**********************************************************\n\n");
         NSLog(@"working with arrays");
         NSLog(@"**********************************************************\n\n");
@@ -85,16 +76,24 @@ int main(int argc, const char * argv[]) {
         NSLog (@"contents of nonemptyArray =%@",nonEmptyArray);
         
         //creating an empty array that has capacity
-        NSMutableArray *arrayCapacity = [[NSMutableArray alloc]initWithCapacity:10];
-        NSLog (@"contents of arrayMadeWithCapacity = %@",arrayCapacity);
+        NSMutableArray *arrayWCapacity = [[NSMutableArray alloc]initWithCapacity:10];
+        NSLog (@"contents of arrayMadeWithCapacity = %@",arrayWCapacity);
         
-        [arrayCapacity addObject:@"objectOne"];
-        [arrayCapacity addObject:@"Objecttwo"];
+        [arrayWCapacity addObject:@"ObjectZero"];
+        [arrayWCapacity addObject:@"ObjectOne"];
+        [arrayWCapacity addObject:@"ObjectTwo"];
+         [arrayWCapacity addObject:@"ObjectThree"];
+         [arrayWCapacity addObject:@"ObjectFour"];
+
+        
+        [arrayWCapacity removeObject:@"ObjectZero"];
         
         
-          NSLog (@"results of addObjects = %@",arrayCapacity);
         
-        
+        NSLog (@"results of addObjects = %@",arrayWCapacity);
+        NSLog (@"calling the first two elements of the array = %@,%@",arrayWCapacity[0],arrayWCapacity[1]);
+
+
         //creating an array of objects
                NSArray *appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot"];
         NSLog(@"display all items in appsArray %@",appsArray);
@@ -114,37 +113,39 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"**************************************************************\n\n");
         
-        
-        
-        
-        
-        
-        
+
         
         //recreating an immutiable NSArray to add a new element to it (this is the only way to "update" an NSArray since they cannot be altered
         appsArray = @[@"AngryFowl",@"Lettertouch",@"Tweetrobot",@"Instacanvas"];
-        
-        
+
         //calling a method = sending messages to an object [objectName messageName];
         //in this case sending the 'description' message to the NSArray apps
+        
+        
         NSLog(@"results of sending the description msg to appsArray %@",[appsArray description]);
         NSLog(@"**************************************************************\n\n");
+        
         //storing the results of the 'description' message in a variable
         NSString *result = [appsArray description];
         NSLog(@"storing the results of the 'description' message in a variable %@",result);
+        //adding to array together forming a mulit-dimensional array
+        
+        NSMutableArray *multiArrayOfArrays = [[NSMutableArray alloc]init];
+        
+        [multiArrayOfArrays arrayByAddingObjectsFromArray:appsArray];
+        
+        NSLog(@"multiArrayOfArrays results %@",multiArrayOfArrays);
+
+        
+        
+        
+        
+        
         
         
         NSLog(@"**********************************************************\n\n");
         NSLog(@"working with Dictionaries");
         NSLog(@"**********************************************************\n\n");
-        
-        
-        
-//        NSDictionary opyions
-//        NSDictionary *emptyDict1 = [[NSDictionary alloc]initWithCoder: ];
-//        NSDictionary *emptyDict2 = [[NSDictionary alloc]initWithContentsOfFile:<#(NSString *)#>;
-//        NSDictionary *emptyDict3 = [[NSDictionary alloc]initWithContentsOfURL:<#(NSURL *)#>;
-//        NSDictionary *emptyDict4 = [[NSDictionary alloc]initWithDictionary:<#(NSDictionary *)#> copyItems:<#(BOOL)#>;
         
         
         //creating a dictionary>>format={keyName0:value0,keyName1:value1}
@@ -333,7 +334,7 @@ int main(int argc, const char * argv[]) {
         [newHats enumerateObjectsUsingBlock:enumeratingBlock];
         return 0;
         
-            
+        
         
     }
 }
