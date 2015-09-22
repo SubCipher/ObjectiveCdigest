@@ -10,6 +10,7 @@
 		181F589E1BA1998100C2A32C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F589D1BA1998100C2A32C /* main.m */; };
 		18D148DF1BAE4F02006B6ECD /* PracticeVCNoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */; };
 		18D149171BAFAF93006B6ECD /* FooClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D149161BAFAF93006B6ECD /* FooClass.m */; };
+		18D1491A1BB0EB72006B6ECD /* fooDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D149191BB0EB72006B6ECD /* fooDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeVCNoClass.m; sourceTree = "<group>"; };
 		18D149151BAFAF93006B6ECD /* FooClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooClass.h; sourceTree = "<group>"; };
 		18D149161BAFAF93006B6ECD /* FooClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooClass.m; sourceTree = "<group>"; };
+		18D149181BB0EB72006B6ECD /* fooDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fooDelegate.h; sourceTree = "<group>"; };
+		18D149191BB0EB72006B6ECD /* fooDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fooDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				18D148DE1BAE4F02006B6ECD /* PracticeVCNoClass.m */,
 				18D149151BAFAF93006B6ECD /* FooClass.h */,
 				18D149161BAFAF93006B6ECD /* FooClass.m */,
+				18D149181BB0EB72006B6ECD /* fooDelegate.h */,
+				18D149191BB0EB72006B6ECD /* fooDelegate.m */,
 			);
 			path = prog1;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				181F589E1BA1998100C2A32C /* main.m in Sources */,
 				18D149171BAFAF93006B6ECD /* FooClass.m in Sources */,
 				18D148DF1BAE4F02006B6ECD /* PracticeVCNoClass.m in Sources */,
+				18D1491A1BB0EB72006B6ECD /* fooDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

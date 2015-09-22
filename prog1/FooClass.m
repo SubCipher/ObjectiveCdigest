@@ -10,21 +10,21 @@
 
 @implementation FooClass
 
+-(NSInteger )calculateBirthDate:(NSDate *)currentDate birthday: (NSDate *)birthday {
 
-
--(void)calculateBirthDate:(NSDate *)currentDate BDay:(NSDate *)BDay {
+NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                   components:NSCalendarUnitYear
+                                   fromDate:birthday
+                                   toDate:currentDate
+                                   options:0];
+NSInteger age = [ageComponents year];
     
-    NSDate *birthday = 2/4/1971;
-    
-    NSDate * now = [NSDate date];
-    NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
-                                       components:NSCalendarUnitYear
-                                       fromDate:birthday
-                                       toDate:now
-                                       options:0];
-    NSInteger age = [ageComponents year];
-    
+    NSLog(@"this is from the fooClass %ld",(long)age);
+    NSLog(@"this is from the fooClass %ld",(long)age);
+    return age;
     
 }
+
+
 
 @end

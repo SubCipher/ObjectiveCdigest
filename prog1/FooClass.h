@@ -13,10 +13,10 @@
 @property(strong,nonatomic) NSString *firstName;
 @property(strong,nonatomic) NSString *lastName;
 
+@property NSInteger age;
 
-@property NSInteger foo1;
 @property NSInteger foo2;
 
--(void)calculateBirthDate:(NSDate *)currentDate BDay: (NSDate *)BDay;
+-(NSInteger )calculateBirthDate:(NSDate *)currentDate birthday: (NSDate *)birthday;
 
 @end
